@@ -1,0 +1,24 @@
+<p>Enter Name:</p>
+<input type="text" [(ngModel)]="Employeename" name="employeename" placeholder="Enter your Name" />
+<!-- <p>Your input: {{ employeename }}</p> -->
+<p>Enter E-Mail:</p>
+<input type="email" [(ngModel)]="EmployeeEmail" name="employeeEmail" placeholder="Enter your E-Mail" />
+<p>Password</p>
+<input type="password" [(ngModel)]="EmployeePassword" name="employeePassword" placeholder="Enter your Password" />
+<!-- <p>Your input: {{ employeePassword }}</p> -->
+
+<div class="section">
+  <h3 style="font-weight:bold">Select a Role</h3>
+  <select [(ngModel)]="selectedRoleId">
+    <option value="" disabled selected>Select</option>
+    <option *ngFor="let item of dataList; let i = index" [value]="item.id">
+      {{ item.name }}
+    </option>
+  </select>
+</div>
+
+<div>
+    <button id="btn" (click)="onsave()" type="button" title="Save">
+      💾 Save
+    </button>
+  </div>
